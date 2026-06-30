@@ -57,215 +57,130 @@ st.subheader(
 
 
 anxiety_level = st.slider(
-    "Anxiety Level (1 = Low, 5 = High)",
+    "Anxiety Level (1 = Very Low, 5 = Very High)",
     1,
     5,
     3
 )
-
 
 
 self_esteem = st.slider(
-    "Self Esteem (1 = Low, 5 = High)",
+    "Self Esteem (1 = Very Low, 5 = Very High)",
     1,
     5,
     3
 )
-
-
-
-mental_health_history_text = st.selectbox(
-
-    "Mental Health History",
-
-    ["No", "Yes"]
-
-)
-
-mental_health_history = (
-    1 if mental_health_history_text == "Yes" else 0
-)
-
-
-
-depression_text = st.selectbox(
-
-    "Depression",
-
-    ["No", "Yes"]
-
-)
-
-depression = (
-    1 if depression_text == "Yes" else 0
-)
-
 
 
 headache = st.slider(
-
-    "Headache Level",
-
+    "Headache Frequency (1 = Never, 5 = Very Frequent)",
     1,
     5,
     3
-
 )
-
 
 
 blood_pressure = st.slider(
-
-    "Blood Pressure Level",
-
+    "Blood Pressure Level (1 = Normal, 5 = Very High)",
     1,
     5,
     3
-
 )
-
 
 
 sleep_quality = st.slider(
-
-    "Sleep Quality (1 = Poor, 5 = Good)",
-
+    "Sleep Quality (1 = Poor, 5 = Excellent)",
     1,
     5,
     3
-
 )
-
 
 
 breathing_problem = st.slider(
-
-    "Breathing Problem",
-
+    "Breathing Problem Severity (1 = None, 5 = Severe)",
     1,
     5,
     3
-
 )
-
 
 
 noise_level = st.slider(
-
-    "Noise Level",
-
+    "Noise Disturbance Level (1 = Low, 5 = Very High)",
     1,
     5,
     3
-
 )
-
 
 
 living_conditions = st.slider(
-
-    "Living Conditions",
-
+    "Living Conditions (1 = Poor, 5 = Excellent)",
     1,
     5,
     3
-
 )
-
 
 
 safety = st.slider(
-
-    "Safety Level",
-
+    "Safety Level (1 = Unsafe, 5 = Very Safe)",
     1,
     5,
     3
-
 )
-
 
 
 basic_needs = st.slider(
-
-    "Basic Needs Satisfaction",
-
+    "Basic Needs Satisfaction (1 = Poor, 5 = Fully Satisfied)",
     1,
     5,
     3
-
 )
-
 
 
 academic_performance = st.slider(
-
-    "Academic Performance",
-
+    "Academic Performance (1 = Poor, 5 = Excellent)",
     1,
     5,
     3
-
 )
-
 
 
 study_load = st.slider(
-
-    "Study Load",
-
+    "Study Load Pressure (1 = Very Low, 5 = Very High)",
     1,
     5,
     3
-
 )
-
 
 
 teacher_student_relationship = st.slider(
-
-    "Teacher Student Relationship",
-
+    "Teacher-Student Relationship (1 = Poor, 5 = Excellent)",
     1,
     5,
     3
-
 )
-
 
 
 future_career_concerns = st.slider(
-
-    "Future Career Concerns",
-
+    "Future Career Concerns (1 = Low, 5 = Very High)",
     1,
     5,
     3
-
 )
-
 
 
 social_support = st.slider(
-
-    "Social Support",
-
+    "Social Support (1 = Very Low, 5 = Very High)",
     1,
     5,
     3
-
 )
 
 
-
 peer_pressure = st.slider(
-
-    "Peer Pressure",
-
+    "Peer Pressure (1 = Low, 5 = Very High)",
     1,
     5,
     3
-
 )
 
 
