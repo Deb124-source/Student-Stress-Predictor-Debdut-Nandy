@@ -183,7 +183,46 @@ peer_pressure = st.slider(
     3
 )
 
+# -----------------------------
+# Binary Inputs
+# -----------------------------
 
+
+mental_health_history_text = st.selectbox(
+
+    "Mental Health History",
+
+    ["No", "Yes"]
+
+)
+
+
+mental_health_history = (
+
+    1 if mental_health_history_text == "Yes"
+
+    else 0
+
+)
+
+
+
+depression_text = st.selectbox(
+
+    "Depression",
+
+    ["No", "Yes"]
+
+)
+
+
+depression = (
+
+    1 if depression_text == "Yes"
+
+    else 0
+
+)
 
 extracurricular_text = st.selectbox(
 
