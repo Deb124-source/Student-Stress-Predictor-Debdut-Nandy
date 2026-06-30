@@ -46,204 +46,167 @@ st.write(
 # Inputs
 # -----------------------------
 
+# -----------------------------
+# Inputs - Two Column Layout
+# -----------------------------
+
 st.subheader(
     "Student Information"
 )
 
 
-anxiety_level = st.slider(
-    "Anxiety Level (1 = Very Low, 5 = Very High)",
-    1,5,3
-)
+col1, col2 = st.columns(2)
 
 
-self_esteem = st.slider(
-    "Self Esteem (1 = Very Low, 5 = Very High)",
-    1,5,3
-)
+with col1:
 
 
+    anxiety_level = st.slider(
+        "Anxiety Level (1 = Low, 5 = High)",
+        1,5,3
+    )
 
-mental_health_history_text = st.radio(
 
-    "Mental Health History",
+    mental_health_history_text = st.radio(
+        "Mental Health History",
+        ["No","Yes"],
+        horizontal=True
+    )
 
-    ["No","Yes"],
 
-    horizontal=True
+    mental_health_history = (
+        1 if mental_health_history_text=="Yes" else 0
+    )
 
-)
 
-mental_health_history = (
+    headache = st.slider(
+        "Headache Frequency (1 = Never, 5 = Frequent)",
+        1,5,3
+    )
 
-    1 if mental_health_history_text == "Yes"
 
-    else 0
+    sleep_quality = st.slider(
+        "Sleep Quality (1 = Poor, 5 = Excellent)",
+        1,5,3
+    )
 
-)
 
+    noise_level = st.slider(
+        "Noise Disturbance (1 = Low, 5 = High)",
+        1,5,3
+    )
 
 
-depression_text = st.radio(
+    safety = st.slider(
+        "Safety Level (1 = Unsafe, 5 = Safe)",
+        1,5,3
+    )
 
-    "Depression",
 
-    ["No","Yes"],
+    academic_performance = st.slider(
+        "Academic Performance (1 = Poor, 5 = Excellent)",
+        1,5,3
+    )
 
-    horizontal=True
 
-)
+    teacher_student_relationship = st.slider(
+        "Teacher Relationship (1 = Poor, 5 = Excellent)",
+        1,5,3
+    )
 
 
-depression = (
+    social_support = st.slider(
+        "Social Support (1 = Low, 5 = High)",
+        1,5,3
+    )
 
-    1 if depression_text == "Yes"
 
-    else 0
 
-)
+with col2:
 
 
+    self_esteem = st.slider(
+        "Self Esteem (1 = Low, 5 = High)",
+        1,5,3
+    )
 
-headache = st.slider(
-    "Headache Frequency (1 = Never, 5 = Very Frequent)",
-    1,5,3
-)
 
+    depression_text = st.radio(
+        "Depression",
+        ["No","Yes"],
+        horizontal=True
+    )
 
 
-blood_pressure = st.slider(
-    "Blood Pressure Level (1 = Normal, 5 = Very High)",
-    1,5,3
-)
+    depression = (
+        1 if depression_text=="Yes" else 0
+    )
 
 
+    blood_pressure = st.slider(
+        "Blood Pressure (1 = Normal, 5 = High)",
+        1,5,3
+    )
 
-sleep_quality = st.slider(
-    "Sleep Quality (1 = Poor, 5 = Excellent)",
-    1,5,3
-)
 
+    breathing_problem = st.slider(
+        "Breathing Problem (1 = None, 5 = Severe)",
+        1,5,3
+    )
 
 
-breathing_problem = st.slider(
-    "Breathing Problem Severity (1 = None, 5 = Severe)",
-    1,5,3
-)
+    living_conditions = st.slider(
+        "Living Conditions (1 = Poor, 5 = Excellent)",
+        1,5,3
+    )
 
 
+    basic_needs = st.slider(
+        "Basic Needs (1 = Poor, 5 = Satisfied)",
+        1,5,3
+    )
 
-noise_level = st.slider(
-    "Noise Disturbance (1 = Low, 5 = Very High)",
-    1,5,3
-)
 
+    study_load = st.slider(
+        "Study Load (1 = Low, 5 = High)",
+        1,5,3
+    )
 
 
-living_conditions = st.slider(
-    "Living Conditions (1 = Poor, 5 = Excellent)",
-    1,5,3
-)
+    future_career_concerns = st.slider(
+        "Career Concerns (1 = Low, 5 = High)",
+        1,5,3
+    )
 
 
+    peer_pressure = st.slider(
+        "Peer Pressure (1 = Low, 5 = High)",
+        1,5,3
+    )
 
-safety = st.slider(
-    "Safety Level (1 = Unsafe, 5 = Very Safe)",
-    1,5,3
-)
 
+    extracurricular_text = st.radio(
+        "Extracurricular Activities",
+        ["No","Yes"],
+        horizontal=True
+    )
 
 
-basic_needs = st.slider(
-    "Basic Needs Satisfaction (1 = Poor, 5 = Fully Satisfied)",
-    1,5,3
-)
+    extracurricular_activities = (
+        1 if extracurricular_text=="Yes" else 0
+    )
 
 
+    bullying_text = st.radio(
+        "Bullying",
+        ["No","Yes"],
+        horizontal=True
+    )
 
-academic_performance = st.slider(
-    "Academic Performance (1 = Poor, 5 = Excellent)",
-    1,5,3
-)
 
-
-
-study_load = st.slider(
-    "Study Load Pressure (1 = Low, 5 = Very High)",
-    1,5,3
-)
-
-
-
-teacher_student_relationship = st.slider(
-    "Teacher Student Relationship (1 = Poor, 5 = Excellent)",
-    1,5,3
-)
-
-
-
-future_career_concerns = st.slider(
-    "Future Career Concerns (1 = Low, 5 = Very High)",
-    1,5,3
-)
-
-
-
-social_support = st.slider(
-    "Social Support (1 = Low, 5 = Very High)",
-    1,5,3
-)
-
-
-
-peer_pressure = st.slider(
-    "Peer Pressure (1 = Low, 5 = Very High)",
-    1,5,3
-)
-
-
-
-extracurricular_text = st.radio(
-
-    "Extracurricular Activities",
-
-    ["No","Yes"],
-
-    horizontal=True
-
-)
-
-
-extracurricular_activities = (
-
-    1 if extracurricular_text == "Yes"
-
-    else 0
-
-)
-
-
-
-bullying_text = st.radio(
-
-    "Bullying",
-
-    ["No","Yes"],
-
-    horizontal=True
-
-)
-
-
-bullying = (
-
-    1 if bullying_text == "Yes"
-
-    else 0
-
-)
-
-
+    bullying = (
+        1 if bullying_text=="Yes" else 0
+    )
 
 
 # -----------------------------
