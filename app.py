@@ -26,11 +26,8 @@ with open(
 # -----------------------------
 
 st.set_page_config(
-
     page_title="Student Stress AI",
-
     layout="centered"
-
 )
 
 
@@ -40,162 +37,42 @@ st.title(
 
 
 st.write(
-    "Machine Learning based student stress prediction system"
+    "AI-powered student stress prediction using XGBoost"
 )
 
 
 
 # -----------------------------
-# User Inputs
+# Inputs
 # -----------------------------
-
 
 st.subheader(
-    "Enter Student Information"
+    "Student Information"
 )
-
 
 
 anxiety_level = st.slider(
     "Anxiety Level (1 = Very Low, 5 = Very High)",
-    1,
-    5,
-    3
+    1,5,3
 )
 
 
 self_esteem = st.slider(
     "Self Esteem (1 = Very Low, 5 = Very High)",
-    1,
-    5,
-    3
+    1,5,3
 )
 
 
-headache = st.slider(
-    "Headache Frequency (1 = Never, 5 = Very Frequent)",
-    1,
-    5,
-    3
-)
 
-
-blood_pressure = st.slider(
-    "Blood Pressure Level (1 = Normal, 5 = Very High)",
-    1,
-    5,
-    3
-)
-
-
-sleep_quality = st.slider(
-    "Sleep Quality (1 = Poor, 5 = Excellent)",
-    1,
-    5,
-    3
-)
-
-
-breathing_problem = st.slider(
-    "Breathing Problem Severity (1 = None, 5 = Severe)",
-    1,
-    5,
-    3
-)
-
-
-noise_level = st.slider(
-    "Noise Disturbance Level (1 = Low, 5 = Very High)",
-    1,
-    5,
-    3
-)
-
-
-living_conditions = st.slider(
-    "Living Conditions (1 = Poor, 5 = Excellent)",
-    1,
-    5,
-    3
-)
-
-
-safety = st.slider(
-    "Safety Level (1 = Unsafe, 5 = Very Safe)",
-    1,
-    5,
-    3
-)
-
-
-basic_needs = st.slider(
-    "Basic Needs Satisfaction (1 = Poor, 5 = Fully Satisfied)",
-    1,
-    5,
-    3
-)
-
-
-academic_performance = st.slider(
-    "Academic Performance (1 = Poor, 5 = Excellent)",
-    1,
-    5,
-    3
-)
-
-
-study_load = st.slider(
-    "Study Load Pressure (1 = Very Low, 5 = Very High)",
-    1,
-    5,
-    3
-)
-
-
-teacher_student_relationship = st.slider(
-    "Teacher-Student Relationship (1 = Poor, 5 = Excellent)",
-    1,
-    5,
-    3
-)
-
-
-future_career_concerns = st.slider(
-    "Future Career Concerns (1 = Low, 5 = Very High)",
-    1,
-    5,
-    3
-)
-
-
-social_support = st.slider(
-    "Social Support (1 = Very Low, 5 = Very High)",
-    1,
-    5,
-    3
-)
-
-
-peer_pressure = st.slider(
-    "Peer Pressure (1 = Low, 5 = Very High)",
-    1,
-    5,
-    3
-)
-
-# -----------------------------
-# Binary Inputs
-# -----------------------------
-
-
-mental_health_history_text = st.selectbox(
+mental_health_history_text = st.radio(
 
     "Mental Health History",
 
-    ["No", "Yes"]
+    ["No","Yes"],
+
+    horizontal=True
 
 )
-
 
 mental_health_history = (
 
@@ -207,11 +84,13 @@ mental_health_history = (
 
 
 
-depression_text = st.selectbox(
+depression_text = st.radio(
 
     "Depression",
 
-    ["No", "Yes"]
+    ["No","Yes"],
+
+    horizontal=True
 
 )
 
@@ -224,11 +103,113 @@ depression = (
 
 )
 
-extracurricular_text = st.selectbox(
+
+
+headache = st.slider(
+    "Headache Frequency (1 = Never, 5 = Very Frequent)",
+    1,5,3
+)
+
+
+
+blood_pressure = st.slider(
+    "Blood Pressure Level (1 = Normal, 5 = Very High)",
+    1,5,3
+)
+
+
+
+sleep_quality = st.slider(
+    "Sleep Quality (1 = Poor, 5 = Excellent)",
+    1,5,3
+)
+
+
+
+breathing_problem = st.slider(
+    "Breathing Problem Severity (1 = None, 5 = Severe)",
+    1,5,3
+)
+
+
+
+noise_level = st.slider(
+    "Noise Disturbance (1 = Low, 5 = Very High)",
+    1,5,3
+)
+
+
+
+living_conditions = st.slider(
+    "Living Conditions (1 = Poor, 5 = Excellent)",
+    1,5,3
+)
+
+
+
+safety = st.slider(
+    "Safety Level (1 = Unsafe, 5 = Very Safe)",
+    1,5,3
+)
+
+
+
+basic_needs = st.slider(
+    "Basic Needs Satisfaction (1 = Poor, 5 = Fully Satisfied)",
+    1,5,3
+)
+
+
+
+academic_performance = st.slider(
+    "Academic Performance (1 = Poor, 5 = Excellent)",
+    1,5,3
+)
+
+
+
+study_load = st.slider(
+    "Study Load Pressure (1 = Low, 5 = Very High)",
+    1,5,3
+)
+
+
+
+teacher_student_relationship = st.slider(
+    "Teacher Student Relationship (1 = Poor, 5 = Excellent)",
+    1,5,3
+)
+
+
+
+future_career_concerns = st.slider(
+    "Future Career Concerns (1 = Low, 5 = Very High)",
+    1,5,3
+)
+
+
+
+social_support = st.slider(
+    "Social Support (1 = Low, 5 = Very High)",
+    1,5,3
+)
+
+
+
+peer_pressure = st.slider(
+    "Peer Pressure (1 = Low, 5 = Very High)",
+    1,5,3
+)
+
+
+
+extracurricular_text = st.radio(
 
     "Extracurricular Activities",
 
-    ["No", "Yes"]
+    ["No","Yes"],
+
+    horizontal=True
 
 )
 
@@ -243,11 +224,13 @@ extracurricular_activities = (
 
 
 
-bullying_text = st.selectbox(
+bullying_text = st.radio(
 
     "Bullying",
 
-    ["No", "Yes"]
+    ["No","Yes"],
+
+    horizontal=True
 
 )
 
@@ -266,6 +249,9 @@ bullying = (
 # -----------------------------
 # Prediction
 # -----------------------------
+
+
+st.divider()
 
 
 if st.button(
@@ -324,17 +310,14 @@ if st.button(
     )
 
 
+
     prediction = model.predict(
-
         input_data
-
     )
 
 
     probability = model.predict_proba(
-
         input_data
-
     )
 
 
@@ -353,27 +336,31 @@ if st.button(
 
 
 
+    st.subheader(
+        "Prediction Result"
+    )
+
+
+
     if stress_class == 2:
 
-        result = "High Stress"
-
-        st.error(result)
-
+        st.error(
+            "High Stress Risk"
+        )
 
 
     elif stress_class == 1:
 
-        result = "Medium Stress"
-
-        st.warning(result)
-
+        st.warning(
+            "Medium Stress Risk"
+        )
 
 
     else:
 
-        result = "Low Stress"
-
-        st.success(result)
+        st.success(
+            "Low Stress Risk"
+        )
 
 
 
@@ -383,4 +370,9 @@ if st.button(
 
         f"{confidence}%"
 
+    )
+
+
+    st.caption(
+        "Prediction generated using XGBoost Machine Learning Model"
     )
